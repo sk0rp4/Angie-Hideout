@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://xd32yyqb2vv3"]
+
+[ext_resource type="Texture2D" uid="uid://frio6yukvvb" path="res://Assets/Cute_Fantasy/Animals/Cow/Cow_01.png" id="1_ss0fy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpkvw"]
+size = Vector2(20, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asfwn"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4wuh"]
+atlas = ExtResource("1_ss0fy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxqef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asfwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4wuh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="cow" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_vpkvw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gxqef")
+autoplay = "default"
+frame_progress = 0.161032
