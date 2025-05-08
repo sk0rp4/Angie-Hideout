@@ -9,12 +9,13 @@ size = Vector2(14, 22)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fhddl")
+region_rect = Rect2(0, 0, 128, 112)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(-24, -51, -7, -35, 54, -35, 54, -26, 51, -26, 51, 10, 51, 16, 46.0598, 16, 5, 16, 5, 22, 5, 33, -29, 33, -45, 33, -53, 33, -53, 22, -57, 22, -57, -19)
+polygon = PackedVector2Array(53, -39, 53, 16, 5, 16, 5, 22, 5, 33, -29, 33, -45, 33, -53, 33, -57, 33, -57, 22, -57, -25, -29, -52, -18, -52, -4, -39)
 
 [node name="Area2D" type="Area2D" parent="."]
 
