@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://dr02iga8eceqg"]
 
-[ext_resource type="Script" uid="uid://bvagv08r07evn" path="res://Scripts/Movement_GPT_Test.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://bvagv08r07evn" path="res://Scripts/player_main.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://1vf3em6svbor" path="res://Assets/Old_Sprites/Player_Merged/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
@@ -303,3 +303,7 @@ sprite_frames = SubResource("SpriteFrames_f1ek2")
 animation = &"idle_down"
 autoplay = "idle_down"
 frame_progress = 0.23601
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true

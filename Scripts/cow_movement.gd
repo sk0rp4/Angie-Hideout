@@ -33,7 +33,7 @@ func _ready() -> void:
 	# Initial state
 	_enter_idle_state()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if current_state == State.WANDERING:
 		var direction_to_target = global_position.direction_to(target_position)
 		velocity = direction_to_target * speed

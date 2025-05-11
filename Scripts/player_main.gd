@@ -2,19 +2,20 @@ extends CharacterBody2D
 
 @export var speed: float = 125.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 var last_direction : Vector2 = Vector2.DOWN
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
 
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_up"):
 		input_vector.y -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_down"):
 		input_vector.y += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		input_vector.x -= 1
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		input_vector.x += 1
 
 
@@ -44,3 +45,5 @@ func _physics_process(delta):
 		elif last_direction.x != 0:
 			animated_sprite.play("idle_right")
 			animated_sprite.flip_h = last_direction.x < 0
+			
+#Detect input and change scene (enter exit house)
