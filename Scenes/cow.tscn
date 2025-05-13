@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xd32yyqb2vv3"]
 
-[ext_resource type="Script" path="res://Scripts/cow_movement.gd" id="1_asfwn"]
+[ext_resource type="Script" uid="uid://ysuld3nhv60i" path="res://Scripts/cow_movement.gd" id="1_asfwn"]
 [ext_resource type="Texture2D" uid="uid://frio6yukvvb" path="res://Assets/Cute_Fantasy/Animals/Cow/Cow_01.png" id="1_ss0fy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asfwn"]

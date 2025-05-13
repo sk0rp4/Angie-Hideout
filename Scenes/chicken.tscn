@@ -1,0 +1,88 @@
+[gd_scene load_steps=12 format=3 uid="uid://b2vspofiqfvm"]
+
+[ext_resource type="Texture2D" uid="uid://dlydnd4bhjlxf" path="res://Assets/Cute_Fantasy/Animals/Chicken/Chicken_01.png" id="1_245eq"]
+[ext_resource type="Script" uid="uid://dkvyo2cm5afn" path="res://Scripts/chicken_movement.gd" id="1_jy3mo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy3mo"]
+atlas = ExtResource("1_245eq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h841"]
+atlas = ExtResource("1_245eq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jayuq"]
+atlas = ExtResource("1_245eq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7ecu"]
+atlas = ExtResource("1_245eq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaoqc"]
+atlas = ExtResource("1_245eq")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xftuy"]
+atlas = ExtResource("1_245eq")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c736p"]
+atlas = ExtResource("1_245eq")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5he0"]
+atlas = ExtResource("1_245eq")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e522a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy3mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h841")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jayuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7ecu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaoqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xftuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c736p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5he0")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="chicken" type="CharacterBody2D"]
+script = ExtResource("1_jy3mo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e522a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.205207
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(2, -4, 6, -2, 6, 0, -6, 0, -6, -2, -4, -4)
+
+[node name="Timer" type="Timer" parent="."]

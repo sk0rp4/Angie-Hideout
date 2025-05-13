@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cojylpmpflrbq"]
+
+[ext_resource type="Texture2D" uid="uid://dlqshto031tw" path="res://Assets/Cute_Fantasy/House/Buildings/Special_Buildings/Chicken_Coop/Chicken_Coop.png" id="1_jkh2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unadx"]
+size = Vector2(54, 63)
+
+[node name="coop" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jkh2f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_unadx")

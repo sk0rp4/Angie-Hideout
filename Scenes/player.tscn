@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://bvagv08r07evn" path="res://Scripts/player_main.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://1vf3em6svbor" path="res://Assets/Old_Sprites/Player_Merged/Player_New/Player_Anim/Player_Idle_Run_Death_Anim.png" id="1_v0iea"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(11, 18)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("1_v0iea")
 region = Rect2(0, 0, 32, 32)
@@ -291,18 +288,21 @@ animations = [{
 "speed": 13.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(9, 15)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -2)
-shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f1ek2")
 animation = &"idle_down"
 autoplay = "idle_down"
 frame_progress = 0.23601
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
