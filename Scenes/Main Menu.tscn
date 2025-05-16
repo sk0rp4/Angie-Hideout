@@ -1,3 +1,54 @@
-[gd_scene format=3 uid="uid://dojhcohdcilnb"]
+[gd_scene load_steps=2 format=3 uid="uid://bsv1cg7bqkugp"]
 
-[node name="Main Menu" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_84115"]
+script/source = "extends CanvasLayer
+
+@onready var ip_input: LineEdit = $VBoxContainer/IPInput
+
+func _ready():
+	$VBoxContainer/HostButton.pressed.connect(on_host_pressed)
+	$VBoxContainer/JoinButton.pressed.connect(on_join_pressed)
+
+func on_host_pressed():
+	Networkmanager.host_game()
+	load_game_scene()
+
+func on_join_pressed():
+	var ip = ip_input.text
+	if ip == \"\":
+		ip = \"127.0.0.1\"  # fallback to localhost
+	Networkmanager.join_game(ip)
+	load_game_scene()
+
+func load_game_scene():
+	await get_tree().create_timer(1).timeout  # wait briefly to ensure connection
+	get_tree().change_scene_to_file(\"res://Scenes/hideout.tscn\")  # change this to your main game scene path
+"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = SubResource("GDScript_84115")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -50.5
+offset_right = 47.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="JoinButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Game"
+
+[node name="IPInput" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter IP Address"

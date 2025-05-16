@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://bt27ytm3q70v0"]
+[gd_scene load_steps=16 format=4 uid="uid://bt27ytm3q70v0"]
 
 [ext_resource type="Texture2D" uid="uid://b35upshflmbfs" path="res://Assets/Cute_Fantasy/House/Buildings/Houses_Interiors/Wood_Floor_Tiles.png" id="1_0cjig"]
 [ext_resource type="Script" uid="uid://dv5ohejjjiei5" path="res://Scripts/house_1_interior.gd" id="1_vem02"]
 [ext_resource type="Texture2D" uid="uid://bwksafl83aea0" path="res://Assets/Cute_Fantasy/House/Buildings/Houses_Interiors/Interior_Walls.png" id="2_vem02"]
 [ext_resource type="Texture2D" uid="uid://bil56w5r5ohpv" path="res://Assets/Cute_Fantasy/House/Buildings/Windows.png" id="3_4ewg3"]
 [ext_resource type="Texture2D" uid="uid://bp8tn6nw8ofwl" path="res://Assets/Cute_Fantasy/House/Objects/Indoor_Decor.png" id="4_immvi"]
+[ext_resource type="PackedScene" uid="uid://dr02iga8eceqg" path="res://Scenes/player.tscn" id="6_4ewg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwu3w"]
 texture = ExtResource("1_0cjig")
@@ -1919,6 +1920,9 @@ position = Vector2(8, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoorArea"]
 position = Vector2(8, -6)
 shape = SubResource("RectangleShape2D_vem02")
+
+[node name="player" parent="." instance=ExtResource("6_4ewg3")]
+position = Vector2(8, -16)
 
 [connection signal="body_entered" from="ExitDoorArea" to="." method="_on_exit_door_area_body_entered"]
 [connection signal="body_exited" from="ExitDoorArea" to="." method="_on_exit_door_area_body_exited"]

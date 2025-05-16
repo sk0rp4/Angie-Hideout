@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbucrhphlj1pt"]
+
+[ext_resource type="Script" uid="uid://bna2d4x4x5ea5" path="res://Scripts/picture_frame.gd" id="1_0tgqo"]
+[ext_resource type="Texture2D" uid="uid://dlbc6qo7x3d43" path="res://Assets/art_jitsu_blanko.png" id="2_y5xxf"]
+[ext_resource type="FontFile" uid="uid://dtuau6h231536" path="res://Assets/fonts/PixelOperator8.ttf" id="3_y5xxf"]
+
+[node name="picture frame" type="Node2D"]
+script = ExtResource("1_0tgqo")
+
+[node name="Photo" type="Sprite2D" parent="."]
+position = Vector2(3.4771, 2.8125)
+scale = Vector2(0.0510176, 0.0510176)
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(3.69565, 3)
+scale = Vector2(0.865865, 1.13043)
+texture = ExtResource("2_y5xxf")
+region_enabled = true
+region_rect = Rect2(480.674, 96.6737, 94.686, 46.8513)
+
+[node name="Description" type="Label" parent="."]
+offset_left = -34.0
+offset_top = 32.0
+offset_right = 118.0
+offset_bottom = 55.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_y5xxf")
+theme_override_font_sizes/font_size = 8
+text = "\" Our  \""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Date" type="Label" parent="."]
+offset_left = -32.0
+offset_top = -36.0
+offset_right = 112.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_y5xxf")
+theme_override_font_sizes/font_size = 8
+text = "15 / 05 / 2025"
+horizontal_alignment = 1
+vertical_alignment = 1

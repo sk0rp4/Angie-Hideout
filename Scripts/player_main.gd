@@ -5,6 +5,12 @@ extends CharacterBody2D
 
 var last_direction : Vector2 = Vector2.DOWN
 
+func _ready():
+	global_position = Global.spawn_position
+	
+
+func teleport_to_scene(scene_path: String):
+	get_tree().change_scene_to_file(scene_path)
 
 func _physics_process(_delta):
 	var input_vector = Vector2.ZERO
@@ -17,7 +23,6 @@ func _physics_process(_delta):
 		input_vector.x -= 1
 	if Input.is_action_pressed("move_right"):
 		input_vector.x += 1
-
 
 	input_vector = input_vector.normalized()
 

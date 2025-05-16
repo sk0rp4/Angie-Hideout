@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://go78membdqum"]
+
+[ext_resource type="Texture2D" uid="uid://bftauk5d7qtfp" path="res://Assets/Sliced Asset/Houses/museum1.png" id="1_eki47"]
+[ext_resource type="Texture2D" uid="uid://ba0bkx3ot48tr" path="res://Assets/Sliced Asset/Houses/museum2.png" id="2_jkg5h"]
+[ext_resource type="Script" uid="uid://1pwjo87b2u6d" path="res://Scripts/museumdoor.gd" id="3_jkg5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eki47"]
+size = Vector2(64, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkg5h"]
+size = Vector2(10, 18)
+
+[node name="museum" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_eki47")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, 56)
+texture = ExtResource("2_jkg5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 43)
+shape = SubResource("RectangleShape2D_eki47")
+
+[node name="museumdoor" type="Area2D" parent="."]
+position = Vector2(-12, 74)
+script = ExtResource("3_jkg5h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="museumdoor"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_jkg5h")
